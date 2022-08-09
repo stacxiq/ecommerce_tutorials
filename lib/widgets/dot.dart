@@ -11,13 +11,16 @@ class dot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
       height: 13,
       width: index == active ? 40 : 12,
       margin: EdgeInsets.all(4),
       decoration: BoxDecoration(
-          color: index == active ? Colors.red : Colors.red.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(15)),
+        color: index == active ? Colors.red : Colors.red.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(15),
+      ),
     );
   }
 }

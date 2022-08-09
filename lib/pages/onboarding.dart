@@ -1,4 +1,5 @@
 import 'package:ecommerce_tutorials/models/onboarding.dart';
+import 'package:ecommerce_tutorials/pages/tabs.dart';
 import 'package:ecommerce_tutorials/widgets/dot.dart';
 import 'package:ecommerce_tutorials/widgets/slide.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,10 @@ class _OnBoardingState extends State<OnBoarding> {
                         duration: Duration(milliseconds: 500),
                         curve: Curves.easeIn);
                   } else {
-                    print('go to next page');
+                    // navigator
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (context) => TabsPage()),
+                        (route) => false);
                   }
                 },
                 child: Text(
@@ -79,6 +83,9 @@ class _OnBoardingState extends State<OnBoarding> {
             TextButton(
               onPressed: () {
                 /*...*/
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => TabsPage()),
+                    (route) => false);
               },
               child: Text(
                 'تخطي',
